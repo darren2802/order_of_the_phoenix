@@ -1,0 +1,15 @@
+<h1><%= search_results.house %></h1>
+<p>Number of members: <%= search_results.member_count %>
+<h3>Members</h3>
+<table>
+  <th>Name</th>
+  <th>Role</th>
+  <th>House</th>
+  <th>Patronus</th>
+  <% search_results.members_by_house.each do |member| %>
+    <tr>
+      <td>member.name</td>
+    </tr>
+
+  <% end %>
+</table>

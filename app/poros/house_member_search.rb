@@ -6,20 +6,22 @@ class HouseMemberSearch
   end
 
   def member_count
-    members.count
+    members_by_house.length
   end
 
   def members_by_house
     service = HarryPotterService.new
-    member_data = {}
+    members = []
     service.members.each do |member|
       if member[:house] == house
-        member_data[:name] = member[:name]
-        member_data[:role] = member[:role]
-        member_data[:house] = member[:house]
-        member_data[:patronus] = member[:patronus] if member[:patronus]
+        data = {
+          name: member[:name],
+          role: member[:role],
+          house: member[:house],
+          patronus: member[:patronus]
+        }
+        members << Member.new(data)
       end
     end
-    require "pry"; binding.pry
   end
 end

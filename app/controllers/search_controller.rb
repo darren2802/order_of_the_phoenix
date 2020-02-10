@@ -3,6 +3,5 @@ class SearchController < ApplicationController
     render locals: {
       search_results: HouseMemberSearch.new(params[:house])
     }
-    require "pry"; binding.pry
   end
 end
