@@ -6,10 +6,10 @@ class HouseMemberSearch
   end
 
   def member_count
-    members_by_house.length
+    members.length
   end
 
-  def members_by_house
+  def members
     service = HarryPotterService.new
     members = []
     service.members.each do |member|
@@ -23,5 +23,6 @@ class HouseMemberSearch
         members << Member.new(data)
       end
     end
+    members
   end
 end

@@ -11,6 +11,7 @@ describe 'Member Search' do
 
     expect(current_path).to eq(search_path)
 
-
+    expect(page).to have_content('Number of members: 41')
+    expect(page).to have_css("table#members-Gryffindor tr", count: 41)
   end
 end

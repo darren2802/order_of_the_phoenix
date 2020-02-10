@@ -1,14 +1,17 @@
 <h1><%= search_results.house %></h1>
 <p>Number of members: <%= search_results.member_count %>
 <h3>Members</h3>
-<table>
+<table id=members-<%= search_results.house %>>
   <th>Name</th>
   <th>Role</th>
   <th>House</th>
   <th>Patronus</th>
-  <% search_results.members_by_house.each do |member| %>
+  <% search_results.members.each do |member| %>
     <tr>
-      <td>member.name</td>
+      <td><%= member.name %></td>
+      <td><%= member.role %></td>
+      <td><%= member.house %></td>
+      <td><%= member.patronus %></td>
     </tr>
 
   <% end %>
