@@ -1,5 +1,5 @@
 class HarryPotterService
-  def members_by_house(house)
+  def members
     api_key = ENV['POTTER_API_KEY']
     get_json("/v1/characters?key=#{api_key}")
   end
